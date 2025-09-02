@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(50, 80%, 97%);
+  --foreground: hsl(0, 60%, 20%);
+  --card: hsl(48, 100%, 98%);
+  --card-foreground: hsl(0, 60%, 20%);
+  --popover: hsl(48, 100%, 98%);
+  --popover-foreground: hsl(0, 60%, 20%);
+  --primary: hsl(43, 95%, 45%);
+  --primary-foreground: hsl(48, 100%, 98%);
+  --secondary: hsl(15, 95%, 55%);
+  --secondary-foreground: hsl(48, 100%, 98%);
+  --muted: hsl(46, 60%, 90%);
+  --muted-foreground: hsl(0, 30%, 45%);
+  --accent: hsl(25, 95%, 60%);
+  --accent-foreground: hsl(48, 100%, 98%);
+  --destructive: hsl(0, 84%, 40%);
+  --destructive-foreground: hsl(48, 100%, 98%);
+  --border: hsl(43, 95%, 45%);
+  --input: hsl(43, 95%, 45%);
+  --ring: hsl(43, 95%, 45%);
+  --gold: hsl(43, 95%, 45%);
+  --burgundy: hsl(0, 70%, 35%);
+  --traditional-red: hsl(0, 70%, 50%);
+  --traditional-orange: hsl(25, 95%, 60%);
+  --traditional-saffron: hsl(35, 95%, 65%);
+  --radius: 0.75rem;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-gujarati: "Noto Sans Gujarati", sans-serif;
+  --sidebar: hsl(48, 100%, 98%);
+  --sidebar-foreground: hsl(0, 60%, 20%);
+  --sidebar-primary: hsl(43, 95%, 45%);
+  --sidebar-primary-foreground: hsl(48, 100%, 98%);
+  --sidebar-accent: hsl(46, 60%, 90%);
+  --sidebar-accent-foreground: hsl(43, 95%, 45%);
+  --sidebar-border: hsl(43, 95%, 45%);
+  --sidebar-ring: hsl(43, 95%, 45%);
+}
+
+.dark {
+  --background: hsl(20, 14%, 4%);
+  --foreground: hsl(45, 50%, 90%);
+  --card: hsl(25, 5%, 8%);
+  --card-foreground: hsl(45, 50%, 90%);
+  --popover: hsl(25, 5%, 8%);
+  --popover-foreground: hsl(45, 50%, 90%);
+  --primary: hsl(43, 87%, 50%);
+  --primary-foreground: hsl(25, 5%, 8%);
+  --secondary: hsl(25, 95%, 60%);
+  --secondary-foreground: hsl(25, 5%, 8%);
+  --muted: hsl(25, 5%, 15%);
+  --muted-foreground: hsl(25, 5%, 65%);
+  --accent: hsl(25, 95%, 60%);
+  --accent-foreground: hsl(25, 5%, 8%);
+  --destructive: hsl(0, 84%, 45%);
+  --destructive-foreground: hsl(48, 100%, 97%);
+  --border: hsl(25, 5%, 20%);
+  --input: hsl(25, 5%, 20%);
+  --ring: hsl(43, 87%, 50%);
+  --gold: hsl(43, 87%, 50%);
+  --burgundy: hsl(0, 84%, 45%);
+  --sidebar: hsl(25, 5%, 8%);
+  --sidebar-foreground: hsl(45, 50%, 90%);
+  --sidebar-primary: hsl(43, 87%, 50%);
+  --sidebar-primary-foreground: hsl(25, 5%, 8%);
+  --sidebar-accent: hsl(25, 5%, 15%);
+  --sidebar-accent-foreground: hsl(43, 87%, 50%);
+  --sidebar-border: hsl(25, 5%, 20%);
+  --sidebar-ring: hsl(43, 87%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  .gujarati-text {
+    font-family: var(--font-gujarati);
+  }
+
+  .traditional-border {
+    border: 3px solid var(--gold);
+    border-image: linear-gradient(45deg, var(--gold), var(--burgundy), var(--gold)) 1;
+  }
+
+  .decorative-bg {
+    background: linear-gradient(135deg, var(--background), var(--card));
+  }
+
+  .admin-panel {
+    background: linear-gradient(135deg, hsl(210, 40%, 98%), hsl(210, 40%, 95%));
+  }
+}
+
+@layer components {
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
