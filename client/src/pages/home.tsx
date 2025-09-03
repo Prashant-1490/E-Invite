@@ -31,7 +31,7 @@ export default function Home() {
       <Header />
       
       {/* Hero Section with Traditional Design */}
-      <section className="relative py-12 bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
+      <section id="home" className="relative py-12 bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
         {/* Traditional Border Pattern */}
         <div className="absolute inset-0 border-8 border-gold opacity-20">
           <div className="absolute inset-4 border-4 border-red-600 opacity-30"></div>
@@ -192,10 +192,18 @@ export default function Home() {
         </div>
       </section>
 
-      <EventTimeline />
-      <CouplesGrid />
-      <VenueSection />
-      <GiftsSection />
+      <div id="events">
+        <EventTimeline />
+      </div>
+      <div id="couples">
+        <CouplesGrid />
+      </div>
+      <div id="venue">
+        <VenueSection />
+      </div>
+      <div id="gifts">
+        <GiftsSection />
+      </div>
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
@@ -222,7 +230,9 @@ export default function Home() {
         </button>
       </div>
 
-      <Footer />
+      <div id="footer">
+        <Footer />
+      </div>
     </div>
   );
 }

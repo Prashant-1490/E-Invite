@@ -118,6 +118,12 @@ export const giftsRelations = relations(gifts, ({ many }) => ({
 export const insertEventSchema = createInsertSchema(events).omit({
   id: true,
   createdAt: true,
+}).extend({
+  datetime: z.string().transform((str) => new Date(str)).or(z.date()),
+  nameGujarati: z.string().min(1, "Gujarati name is required"),
+  nameEnglish: z.string().min(1, "English name is required"),
+  timeGujarati: z.string().min(1, "Gujarati time is required"),
+  timeEnglish: z.string().min(1, "English time is required"),
 });
 
 export const insertCoupleSchema = createInsertSchema(couples).omit({
